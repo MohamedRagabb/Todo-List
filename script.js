@@ -21,6 +21,35 @@ function addTask(){
     }
     
     inputTask.value="";
+    setTask();
 }
 
 btn.addEventListener("click", addTask); 
+
+taskList.addEventListener("click",function(e){
+    if(e.target.tagName ==="LI"){
+        e.target.classList.toggle("checked");
+        setTask();
+    }else if(e.target.tagName ==="SPAN"){
+        e.target.parentElement.remove();
+        setTask();
+    }
+    
+});
+
+inputTask.addEventListener("keydown",function(e){
+    if(e.key ==="Enter"){
+        addTask();
+    }
+});
+
+function setTask(){
+    localStorage.setItem("lists", taskList.innerHTML)
+
+};
+
+
+function loadTaskes(){
+    taskList.innerHTML= localStorage.getItem("lists")
+}
+loadTaskes();

@@ -93,10 +93,10 @@ body{
     border-radius: 100%;
     cursor: pointer;
 }
-.todo-list ul li.cheked::before{
+.todo-list ul li.checked::before{
     background: url(./images/checked.png) center/cover;
 }
 
-.todo-list ul li.cheked{
+.todo-list ul li.checked{
     text-decoration: line-through;
 }
